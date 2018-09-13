@@ -50,3 +50,11 @@ extension AddProfileViewController: KeyboardSpy {
         keyboardNotifications(false)
     }
 }
+
+// MARK: - Handlers
+extension AddProfileViewController {
+    
+    private func handleSubmission() {
+        let manager = ProfileManager()
+    }
+}
