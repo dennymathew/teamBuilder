@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kEe-Ki-ZfK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Profile View Controller-->
+        <scene sceneID="dFr-Dl-VZe">
+            <objects>
+                <viewController id="kEe-Ki-ZfK" customClass="AddProfileViewController" customModule="TeamBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAs-gD-vBE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EfE-1U-n1B">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8a-Yq-mtA" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFL-im-B9d" customClass="TBTextField" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="116" width="343" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bwZ-1i-CqZ"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Pc-Q0-Sz5" customClass="TBTextField" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="182" width="343" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Pcy-eb-VKk"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Designation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-gE-bYo" customClass="TBTextField" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="248" width="343" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dz1-Z1-3DI"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="kEe-Ki-ZfK" id="FF6-il-BDt"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Technology 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XJU-zg-Syk" customClass="TBTextField" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="314" width="343" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="H8R-s7-wo7"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Technology 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6J-VY-wNh" customClass="TBTextField" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="380" width="343" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="HKI-s9-qvG"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Technology 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0S4-DD-wXD" customClass="TBTextField" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="446" width="343" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="WVg-ky-jEG"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1od-Do-lNJ" customClass="TBButton" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="112.5" y="520" width="150" height="40"/>
+                                                <color key="backgroundColor" red="0.91687817258883253" green="0.41602090776920314" blue="0.030938044336168893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="XJb-MZ-XbG"/>
+                                                    <constraint firstAttribute="width" constant="150" id="va7-hr-3Ds"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Submit">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actSubmit:" destination="kEe-Ki-ZfK" eventType="touchUpInside" id="ceU-uj-2dZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-Tk-UY3" customClass="TBButton" customModule="TeamBuilder" customModuleProvider="target">
+                                                <rect key="frame" x="157.5" y="40" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="cGq-Qj-LrP"/>
+                                                    <constraint firstAttribute="width" constant="60" id="ca8-Wa-CvW"/>
+                                                </constraints>
+                                                <state key="normal" image="profile"/>
+                                                <connections>
+                                                    <action selector="actProfileImage:" destination="kEe-Ki-ZfK" eventType="touchUpInside" id="Uxh-Lh-IWA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="f6J-VY-wNh" firstAttribute="top" secondItem="XJU-zg-Syk" secondAttribute="bottom" constant="16" id="1XA-qN-gVJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="mFL-im-B9d" secondAttribute="trailing" constant="16" id="3e9-VH-vcl"/>
+                                            <constraint firstItem="XC3-gE-bYo" firstAttribute="leading" secondItem="y8a-Yq-mtA" secondAttribute="leading" constant="16" id="Axj-fC-ziC"/>
+                                            <constraint firstAttribute="trailing" secondItem="f6J-VY-wNh" secondAttribute="trailing" constant="16" id="BpR-iK-kpc"/>
+                                            <constraint firstItem="mFL-im-B9d" firstAttribute="top" secondItem="XPK-Tk-UY3" secondAttribute="bottom" constant="16" id="Dp6-XV-WfY"/>
+                                            <constraint firstItem="f6J-VY-wNh" firstAttribute="leading" secondItem="y8a-Yq-mtA" secondAttribute="leading" constant="16" id="HGn-QS-f3z"/>
+                                            <constraint firstItem="1od-Do-lNJ" firstAttribute="top" secondItem="0S4-DD-wXD" secondAttribute="bottom" constant="24" id="Hod-ln-DHF"/>
+                                            <constraint firstItem="mFL-im-B9d" firstAttribute="leading" secondItem="y8a-Yq-mtA" secondAttribute="leading" constant="16" id="Hzc-MI-zyw"/>
+                                            <constraint firstItem="XPK-Tk-UY3" firstAttribute="centerX" secondItem="y8a-Yq-mtA" secondAttribute="centerX" id="JcE-Kx-ccR"/>
+                                            <constraint firstItem="XJU-zg-Syk" firstAttribute="top" secondItem="XC3-gE-bYo" secondAttribute="bottom" constant="16" id="O70-cs-0kL"/>
+                                            <constraint firstItem="1Pc-Q0-Sz5" firstAttribute="top" secondItem="mFL-im-B9d" secondAttribute="bottom" constant="16" id="RdL-wj-9z2"/>
+                                            <constraint firstItem="0S4-DD-wXD" firstAttribute="top" secondItem="f6J-VY-wNh" secondAttribute="bottom" constant="16" id="Rjc-vt-LWZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="XC3-gE-bYo" secondAttribute="trailing" constant="16" id="Tzv-D8-wcd"/>
+                                            <constraint firstItem="1Pc-Q0-Sz5" firstAttribute="leading" secondItem="y8a-Yq-mtA" secondAttribute="leading" constant="16" id="Weq-4F-YfW"/>
+                                            <constraint firstItem="1od-Do-lNJ" firstAttribute="centerX" secondItem="y8a-Yq-mtA" secondAttribute="centerX" id="Y9o-nA-sz3"/>
+                                            <constraint firstAttribute="trailing" secondItem="XJU-zg-Syk" secondAttribute="trailing" constant="16" id="Zcr-Tl-2k7"/>
+                                            <constraint firstItem="XC3-gE-bYo" firstAttribute="top" secondItem="1Pc-Q0-Sz5" secondAttribute="bottom" constant="16" id="aGh-L9-8o7"/>
+                                            <constraint firstItem="0S4-DD-wXD" firstAttribute="leading" secondItem="y8a-Yq-mtA" secondAttribute="leading" constant="16" id="dZh-hN-XZ0"/>
+                                            <constraint firstItem="XPK-Tk-UY3" firstAttribute="top" secondItem="y8a-Yq-mtA" secondAttribute="top" constant="40" id="hqV-Ic-RTG"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Pc-Q0-Sz5" secondAttribute="trailing" constant="16" id="wP5-zS-5xH"/>
+                                            <constraint firstAttribute="trailing" secondItem="0S4-DD-wXD" secondAttribute="trailing" constant="16" id="wnV-QT-9A8"/>
+                                            <constraint firstItem="XJU-zg-Syk" firstAttribute="leading" secondItem="y8a-Yq-mtA" secondAttribute="leading" constant="16" id="zJA-k7-9Ap"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="y8a-Yq-mtA" firstAttribute="leading" secondItem="EfE-1U-n1B" secondAttribute="leading" id="7aa-2R-fyx"/>
+                                    <constraint firstItem="y8a-Yq-mtA" firstAttribute="top" secondItem="EfE-1U-n1B" secondAttribute="top" id="Ma3-iA-bFE"/>
+                                    <constraint firstAttribute="bottom" secondItem="y8a-Yq-mtA" secondAttribute="bottom" id="RAe-aZ-jXU"/>
+                                    <constraint firstAttribute="trailing" secondItem="y8a-Yq-mtA" secondAttribute="trailing" id="c3g-QS-ZrN"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EfE-1U-n1B" firstAttribute="top" secondItem="YAs-gD-vBE" secondAttribute="top" id="VGn-Kr-N7w"/>
+                            <constraint firstItem="zEA-jx-OFS" firstAttribute="trailing" secondItem="EfE-1U-n1B" secondAttribute="trailing" id="fj2-Tn-g40"/>
+                            <constraint firstItem="y8a-Yq-mtA" firstAttribute="width" secondItem="zEA-jx-OFS" secondAttribute="width" id="gjz-XE-fgx"/>
+                            <constraint firstItem="EfE-1U-n1B" firstAttribute="leading" secondItem="zEA-jx-OFS" secondAttribute="leading" id="h2c-Xw-bEs"/>
+                            <constraint firstItem="y8a-Yq-mtA" firstAttribute="height" secondItem="zEA-jx-OFS" secondAttribute="height" priority="250" id="kZt-bu-2MV"/>
+                            <constraint firstItem="zEA-jx-OFS" firstAttribute="bottom" secondItem="EfE-1U-n1B" secondAttribute="bottom" id="wNS-Of-nOR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zEA-jx-OFS"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnProfileImage" destination="XPK-Tk-UY3" id="LFC-AH-8zr"/>
+                        <outlet property="btnSubmit" destination="1od-Do-lNJ" id="6mJ-3K-TgH"/>
+                        <outlet property="scrollView" destination="EfE-1U-n1B" id="5PN-8U-hie"/>
+                        <outlet property="tfDesignation" destination="XC3-gE-bYo" id="E40-04-dzT"/>
+                        <outlet property="tfFirstName" destination="mFL-im-B9d" id="rbE-jA-uqm"/>
+                        <outlet property="tfLastName" destination="1Pc-Q0-Sz5" id="EzL-sI-ONG"/>
+                        <outlet property="tfTechnologyOne" destination="XJU-zg-Syk" id="ll1-rU-KKd"/>
+                        <outlet property="tfTechnologyThree" destination="0S4-DD-wXD" id="KcU-hD-RGh"/>
+                        <outlet property="tfTechnologyTwo" destination="f6J-VY-wNh" id="uPR-1C-tr0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBZ-OK-C7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.8" y="163.26836581709148"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile" width="360" height="360"/>
+    </resources>
+</document>
