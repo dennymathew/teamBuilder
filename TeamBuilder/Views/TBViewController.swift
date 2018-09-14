@@ -13,7 +13,7 @@ class TBViewController: UIViewController, UIGestureRecognizerDelegate, Navigatab
     // MARK: - Properties
     lazy var spinner: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
-        ai.style = .white
+        ai.activityIndicatorViewStyle = .white
         ai.hidesWhenStopped = true
         ai.translatesAutoresizingMaskIntoConstraints = false
         ai.accessibilityIdentifier = "base-activityIndicator"
@@ -59,7 +59,7 @@ extension TBViewController {
     
     func startLoading(on loadingView: UIView? = nil, style: UIActivityIndicatorView.Style = .white) {
         DispatchQueue.main.async {
-            self.spinner.style = style
+            self.spinner.activityIndicatorViewStyle = style
             self.placeSpinner(on: loadingView)
             self.spinner.startAnimating()
             self.view.isUserInteractionEnabled = false

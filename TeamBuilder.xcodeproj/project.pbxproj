@@ -41,6 +41,7 @@
 		B07A7436214AD552003D458F /* Technology.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A7435214AD552003D458F /* Technology.swift */; };
 		B07A7438214AD55C003D458F /* Designation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A7437214AD55C003D458F /* Designation.swift */; };
 		B07A743A214AD6D5003D458F /* TBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A7439214AD6D5003D458F /* TBError.swift */; };
+		B07A743C214C486D003D458F /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A743B214C486D003D458F /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		B07A7435214AD552003D458F /* Technology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technology.swift; sourceTree = "<group>"; };
 		B07A7437214AD55C003D458F /* Designation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designation.swift; sourceTree = "<group>"; };
 		B07A7439214AD6D5003D458F /* TBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBError.swift; sourceTree = "<group>"; };
+		B07A743B214C486D003D458F /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				B07A742F214ACFCC003D458F /* AddProfileViewController.swift */,
 				6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */,
+				B07A743B214C486D003D458F /* DashboardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				B07A7413214AC7D6003D458F /* Alert.swift in Sources */,
 				B07A741F214AC7D6003D458F /* SoundHandler.swift in Sources */,
 				B07A741A214AC7D6003D458F /* DateHandler.swift in Sources */,
+				B07A743C214C486D003D458F /* DashboardViewController.swift in Sources */,
 				B07A7434214AD541003D458F /* Profile.swift in Sources */,
 				B07A7416214AC7D6003D458F /* KeyboardSpy.swift in Sources */,
 				B07A741C214AC7D6003D458F /* Extensions.swift in Sources */,
