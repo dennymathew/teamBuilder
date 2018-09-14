@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Designation {
+struct DesignationModel {
     let id: Int32
     let title: String
 }

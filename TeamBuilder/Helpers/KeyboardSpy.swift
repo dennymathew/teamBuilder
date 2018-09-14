@@ -15,14 +15,14 @@ import UIKit
  the first responder is always above the keyboard frame.
  ********************************************************************/
 protocol KeyboardSpy {
-    func keyboardNotifications(_ shouldRegister:Bool)
+    func keyboardNotifications(_ shouldRegister: Bool)
     var container: UIView { get }
 }
 
 extension KeyboardSpy where Self: TBViewController {
     
     //Register for Keyboard Notifications
-    func keyboardNotifications(_ shouldRegister:Bool) {
+    func keyboardNotifications(_ shouldRegister: Bool) {
         
         if shouldRegister {
             
@@ -39,9 +39,7 @@ extension KeyboardSpy where Self: TBViewController {
                              object: nil,
                              queue: OperationQueue.main,
                              using: handler(_:))
-        }
-            
-        else {
+        } else {
            
             guard let showObserver = AppContext.shared.keyboardWillShowObserver,
                 let hideObserver = AppContext.shared.keyboardWillHideObserver else {
@@ -60,7 +58,7 @@ extension KeyboardSpy where Self: TBViewController {
             return
         }
         
-        let animationDuration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        guard let animationDuration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
         let up = notification.name == UIResponder.keyboardWillShowNotification
         
         let firstResponder = findFirstResponder(in: container)
@@ -87,37 +85,29 @@ extension KeyboardSpy where Self: TBViewController {
                 //Push Views Up
                 if firstResponderPosition > visibleContainerHeight && !(container is UIScrollView) {
                     container.transform = CGAffineTransform(translationX: 0, y: offsetY)
-                }
+                } else if container is UIScrollView {
                     
-                else if container is UIScrollView {
-                    
-                    (container as! UIScrollView).contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardRect.height + bottomPadding, right: 0)
+                    (container as? UIScrollView)?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardRect.height + bottomPadding, right: 0)
                     
                     var frame: CGRect
                     
                     if let rect = firstResponder.superview?.convert(firstResponder.frame, to: container) {
                         frame = rect
-                    }
-                        
-                    else {
+                    } else {
                         frame = firstResponder.frame
                     }
                     
-                    (container as! UIScrollView).scrollRectToVisible(frame.offsetBy(dx: 0, dy: bottomPadding), animated: true)
+                    (container as? UIScrollView)?.scrollRectToVisible(frame.offsetBy(dx: 0, dy: bottomPadding), animated: true)
                 }
-            }
-                
-            else {
+            } else {
                 
                 //Add Gesture Recognizer to View
                 self.fireKeyboardkiller()
                 
                 //Pull Views Down
-                if container is UIScrollView {
-                    (container as! UIScrollView).contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                }
-                    
-                else {
+                if let container = container as? UIScrollView {
+                    container.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                } else {
                     container.transform = CGAffineTransform.identity
                 }
             }
@@ -129,7 +119,7 @@ extension KeyboardSpy where Self: TBViewController {
     //Find First Responder TextField Object
     private func findFirstResponder(in view: UIView) -> UIView? {
         
-        for subView in view.subviews  {
+        for subView in view.subviews {
             
             if subView.isFirstResponder {
                 return subView

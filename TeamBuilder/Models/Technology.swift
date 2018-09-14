@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Technology {
+struct TechnologyModel {
     let id: Int32
     let title: String
 }

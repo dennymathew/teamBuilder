@@ -11,10 +11,9 @@ import UIKit
 class TBViewController: UIViewController, UIGestureRecognizerDelegate, Navigatable {
     
     // MARK: - Properties
-    //TODO:- Custom Activity Indicator Types for different Scenarios may be implemented
     lazy var spinner: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
-        ai.activityIndicatorViewStyle = .white
+        ai.style = .white
         ai.hidesWhenStopped = true
         ai.translatesAutoresizingMaskIntoConstraints = false
         ai.accessibilityIdentifier = "base-activityIndicator"
@@ -60,7 +59,7 @@ extension TBViewController {
     
     func startLoading(on loadingView: UIView? = nil, style: UIActivityIndicatorView.Style = .white) {
         DispatchQueue.main.async {
-            self.spinner.activityIndicatorViewStyle = style
+            self.spinner.style = style
             self.placeSpinner(on: loadingView)
             self.spinner.startAnimating()
             self.view.isUserInteractionEnabled = false

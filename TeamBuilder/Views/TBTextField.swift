@@ -16,6 +16,7 @@ class TBTextField: UITextField {
     }
     
     fileprivate func setupCustomPlaceholder() {
-        attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "" , attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "",
+                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
     }
 }

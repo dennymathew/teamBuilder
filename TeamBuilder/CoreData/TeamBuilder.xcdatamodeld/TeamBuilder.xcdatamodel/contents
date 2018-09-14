@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Designations" representedClassName="Designations" syncable="YES" codeGenerationType="class">
+    <entity name="Designation" representedClassName="Designation" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="profiles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profiles" inverseName="designation" inverseEntity="Profiles" syncable="YES"/>
+        <relationship name="profile" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Profile" inverseName="designation" inverseEntity="Profile" syncable="YES"/>
     </entity>
-    <entity name="Profiles" representedClassName="Profiles" syncable="YES" codeGenerationType="class">
+    <entity name="Profile" representedClassName="Profile" syncable="YES" codeGenerationType="class">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="URI" syncable="YES"/>
-        <relationship name="designation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Designations" inverseName="profiles" inverseEntity="Designations" syncable="YES"/>
-        <relationship name="technologies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Technologies" inverseName="profiles" inverseEntity="Technologies" syncable="YES"/>
+        <relationship name="designation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Designation" inverseName="profile" inverseEntity="Designation" syncable="YES"/>
+        <relationship name="technology" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Technology" inverseName="profile" inverseEntity="Technology" syncable="YES"/>
     </entity>
-    <entity name="Technologies" representedClassName="Technologies" syncable="YES" codeGenerationType="class">
+    <entity name="Technology" representedClassName="Technology" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="profiles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profiles" inverseName="technologies" inverseEntity="Profiles" syncable="YES"/>
+        <relationship name="profile" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Profile" inverseName="technology" inverseEntity="Profile" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Profiles" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Technologies" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="Designations" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="Designation" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Technology" positionX="-54" positionY="-9" width="128" height="105"/>
     </elements>
 </model>

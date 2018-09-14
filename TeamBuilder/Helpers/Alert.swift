@@ -11,14 +11,14 @@ import UIKit
 // MARK: - Alert Strcture
 struct Alert {
     
-    typealias AlertCompletion = () -> ()
+    typealias AlertCompletion = () -> Void
     
     //Properties
     var title: String = ""
     var message: String = ""
     var style: UIAlertController.Style = .alert
     var actions: [UIAlertAction] = []
-    var completion: AlertCompletion? = nil
+    var completion: AlertCompletion?
     
     var controller: UIAlertController {
         

@@ -11,7 +11,7 @@ import Foundation
 class AppContext {
     
     static let shared = AppContext()
-    private init(){}
+    private init() {}
     
     //Observers
     var keyboardWillShowObserver: NSObjectProtocol?

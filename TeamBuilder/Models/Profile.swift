@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Profile {
+struct ProfileModel {
     let id: Int32
-    let firstName: String?
-    let lastName: String?
-    let designation: Designation?
-    let technologies: [Technology]?
+    let firstName: String
+    let lastName: String
+    let designation: DesignationModel
+    let technologies: [TechnologyModel]
 }

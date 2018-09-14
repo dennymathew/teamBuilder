@@ -9,9 +9,9 @@
 import Foundation
 
 // MARK: - Application Settings
-@objc fileprivate protocol AppSettingsConfigurable {
-    
-    
+@objc private protocol AppSettingsConfigurable {
+
+    static var lastSavedProfileId: Int32 { get set }
 }
 
 // MARK: - App Settings
@@ -42,4 +42,9 @@ class AppSettings: NSObject {
 }
 
 extension AppSettings: AppSettingsConfigurable {
+
+    static var lastSavedProfileId: Int32 {
+        get { return AppSettings.value(for: #keyPath(lastSavedProfileId)) ?? 0 }
+        set { AppSettings.updateDefaults(for: #keyPath(lastSavedProfileId), value: newValue) }
+    }
 }

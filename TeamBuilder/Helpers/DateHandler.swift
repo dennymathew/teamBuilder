@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class DateHandler {
     
     static func convertToServerFormat(_ dateString: String?) -> String {
@@ -83,6 +82,3 @@ class DateHandler {
         }
     }
 }
-
-
-

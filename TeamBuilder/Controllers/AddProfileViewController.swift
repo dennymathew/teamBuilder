@@ -26,8 +26,10 @@ class AddProfileViewController: TBViewController {
     }
     
     @IBAction func actSubmit(_ sender: TBButton) {
-        Logger.log("Should Save to Core Data!")
+        handleSubmission()
     }
+
+    let manager = ProfileManager()
 }
 
 // MARK: - Life Cycle
@@ -55,6 +57,15 @@ extension AddProfileViewController: KeyboardSpy {
 extension AddProfileViewController {
     
     private func handleSubmission() {
-        let manager = ProfileManager()
+
+        let profile = ProfileModel.init(id: Int32(AppSettings.lastSavedProfileId + 1),
+                                   firstName: tfFirstName.text ?? "",
+                                   lastName: tfLastName.text ?? "",
+                                   designation: manager.designation,
+                                   technologies: manager.technologies)
+
+        manager.saveProfile(profile)
+        self.navigationController?.popViewController(animated: true)
+        
     }
 }

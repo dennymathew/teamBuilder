@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		65611714214A76610017E6CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65611713214A76610017E6CA /* AppDelegate.swift */; };
-		65611719214A76610017E6CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65611717214A76610017E6CA /* Main.storyboard */; };
+		65611719214A76610017E6CA /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65611717214A76610017E6CA /* Dashboard.storyboard */; };
 		6561171C214A76610017E6CA /* TeamBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6561171A214A76610017E6CA /* TeamBuilder.xcdatamodeld */; };
 		6561171E214A76650017E6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6561171D214A76650017E6CA /* Assets.xcassets */; };
 		65611721214A76650017E6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6561171F214A76650017E6CA /* LaunchScreen.storyboard */; };
-		65611737214A905A0017E6CA /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65611736214A905A0017E6CA /* TestController.swift */; };
+		6561173B214B97280017E6CA /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65611739214B97280017E6CA /* ProfileCollectionViewCell.swift */; };
+		6561173C214B97280017E6CA /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6561173A214B97280017E6CA /* ProfileCollectionViewCell.xib */; };
+		6561173E214B98680017E6CA /* ProfileDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */; };
+		65611740214C20B30017E6CA /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561173F214C20B20017E6CA /* PersistentService.swift */; };
 		B07A73F0214AA0EA003D458F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07A73EF214AA0EA003D458F /* Profile.storyboard */; };
 		B07A73F2214AB7DC003D458F /* TBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A73F1214AB7DC003D458F /* TBTextField.swift */; };
 		B07A73F4214AC699003D458F /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A73F3214AC699003D458F /* AppContext.swift */; };
@@ -43,12 +46,15 @@
 /* Begin PBXFileReference section */
 		65611710214A76610017E6CA /* TeamBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65611713214A76610017E6CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65611718214A76610017E6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65611718214A76610017E6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		6561171B214A76610017E6CA /* TeamBuilder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamBuilder.xcdatamodel; sourceTree = "<group>"; };
 		6561171D214A76650017E6CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65611720214A76650017E6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65611722214A76650017E6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65611736214A905A0017E6CA /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		65611739214B97280017E6CA /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		6561173A214B97280017E6CA /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDashboardViewController.swift; sourceTree = "<group>"; };
+		6561173F214C20B20017E6CA /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
 		B07A73EF214AA0EA003D458F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B07A73F1214AB7DC003D458F /* TBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTextField.swift; sourceTree = "<group>"; };
 		B07A73F3214AC699003D458F /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
@@ -123,8 +129,8 @@
 		65611728214A8B3B0017E6CA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				65611736214A905A0017E6CA /* TestController.swift */,
 				B07A742F214ACFCC003D458F /* AddProfileViewController.swift */,
+				6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +160,8 @@
 				B07A73F1214AB7DC003D458F /* TBTextField.swift */,
 				B07A742B214ACD66003D458F /* TBImageView.swift */,
 				B07A742D214ACE52003D458F /* TBButton.swift */,
+				65611739214B97280017E6CA /* ProfileCollectionViewCell.swift */,
+				6561173A214B97280017E6CA /* ProfileCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,8 +179,8 @@
 		6561172D214A8B630017E6CA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				65611717214A76610017E6CA /* Main.storyboard */,
 				6561171F214A76650017E6CA /* LaunchScreen.storyboard */,
+				65611717214A76610017E6CA /* Dashboard.storyboard */,
 				B07A73EF214AA0EA003D458F /* Profile.storyboard */,
 			);
 			path = Storyboards;
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				6561171A214A76610017E6CA /* TeamBuilder.xcdatamodeld */,
+				6561173F214C20B20017E6CA /* PersistentService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -229,6 +238,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65611725214A76650017E6CA /* Build configuration list for PBXNativeTarget "TeamBuilder" */;
 			buildPhases = (
+				65611738214B86F40017E6CA /* Swiftlint */,
 				6561170C214A76600017E6CA /* Sources */,
 				6561170D214A76600017E6CA /* Frameworks */,
 				6561170E214A76600017E6CA /* Resources */,
@@ -282,13 +292,35 @@
 			files = (
 				B07A741E214AC7D6003D458F /* Root.storyboard in Resources */,
 				65611721214A76650017E6CA /* LaunchScreen.storyboard in Resources */,
+				6561173C214B97280017E6CA /* ProfileCollectionViewCell.xib in Resources */,
 				6561171E214A76650017E6CA /* Assets.xcassets in Resources */,
 				B07A73F0214AA0EA003D458F /* Profile.storyboard in Resources */,
-				65611719214A76610017E6CA /* Main.storyboard in Resources */,
+				65611719214A76610017E6CA /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65611738214B86F40017E6CA /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6561170C214A76600017E6CA /* Sources */ = {
@@ -303,11 +335,13 @@
 				B07A7438214AD55C003D458F /* Designation.swift in Sources */,
 				B07A7436214AD552003D458F /* Technology.swift in Sources */,
 				B07A742C214ACD66003D458F /* TBImageView.swift in Sources */,
+				65611740214C20B30017E6CA /* PersistentService.swift in Sources */,
+				6561173B214B97280017E6CA /* ProfileCollectionViewCell.swift in Sources */,
 				B07A742A214ACC35003D458F /* AppConstants.swift in Sources */,
 				6561171C214A76610017E6CA /* TeamBuilder.xcdatamodeld in Sources */,
+				6561173E214B98680017E6CA /* ProfileDashboardViewController.swift in Sources */,
 				B07A7430214ACFCC003D458F /* AddProfileViewController.swift in Sources */,
 				65611714214A76610017E6CA /* AppDelegate.swift in Sources */,
-				65611737214A905A0017E6CA /* TestController.swift in Sources */,
 				B07A73F2214AB7DC003D458F /* TBTextField.swift in Sources */,
 				B07A7417214AC7D6003D458F /* Logger.swift in Sources */,
 				B07A7413214AC7D6003D458F /* Alert.swift in Sources */,
@@ -327,12 +361,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		65611717214A76610017E6CA /* Main.storyboard */ = {
+		65611717214A76610017E6CA /* Dashboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65611718214A76610017E6CA /* Base */,
 			);
-			name = Main.storyboard;
+			name = Dashboard.storyboard;
 			sourceTree = "<group>";
 		};
 		6561171F214A76650017E6CA /* LaunchScreen.storyboard */ = {
