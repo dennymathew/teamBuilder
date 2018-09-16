@@ -34,6 +34,19 @@ class ProfileManager: NSObject {
         //Save Context
         PersistenceService.saveContext()
     }
+    
+    func fetchProfiles(_ completion: @escaping ([Profile]?, TBError?) -> Void) {
+        
+        let fetchRequest: NSFetchRequest<Profile> = Profile.fetchRequest()
+        var profiles = [Profile]()
+        
+        do {
+            profiles = try PersistenceService.context.fetch(fetchRequest)
+            completion(profiles, nil)
+        } catch {
+            completion(nil, TBError.coreDataRetrievingError)
+        }
+    }
 
     var designation: DesignationModel {
         return DesignationModel.init(id: 0, title: "Software Engineer")

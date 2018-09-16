@@ -14,7 +14,7 @@
 		65611721214A76650017E6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6561171F214A76650017E6CA /* LaunchScreen.storyboard */; };
 		6561173B214B97280017E6CA /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65611739214B97280017E6CA /* ProfileCollectionViewCell.swift */; };
 		6561173C214B97280017E6CA /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6561173A214B97280017E6CA /* ProfileCollectionViewCell.xib */; };
-		6561173E214B98680017E6CA /* ProfileDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */; };
+		6561173E214B98680017E6CA /* ProfileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561173D214B98680017E6CA /* ProfileListViewController.swift */; };
 		65611740214C20B30017E6CA /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561173F214C20B20017E6CA /* PersistentService.swift */; };
 		B07A73F0214AA0EA003D458F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07A73EF214AA0EA003D458F /* Profile.storyboard */; };
 		B07A73F2214AB7DC003D458F /* TBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A73F1214AB7DC003D458F /* TBTextField.swift */; };
@@ -54,7 +54,7 @@
 		65611722214A76650017E6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65611739214B97280017E6CA /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		6561173A214B97280017E6CA /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
-		6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDashboardViewController.swift; sourceTree = "<group>"; };
+		6561173D214B98680017E6CA /* ProfileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListViewController.swift; sourceTree = "<group>"; };
 		6561173F214C20B20017E6CA /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
 		B07A73EF214AA0EA003D458F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B07A73F1214AB7DC003D458F /* TBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTextField.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				B07A742F214ACFCC003D458F /* AddProfileViewController.swift */,
-				6561173D214B98680017E6CA /* ProfileDashboardViewController.swift */,
+				6561173D214B98680017E6CA /* ProfileListViewController.swift */,
 				B07A743B214C486D003D458F /* DashboardViewController.swift */,
 			);
 			path = Controllers;
@@ -342,7 +342,7 @@
 				6561173B214B97280017E6CA /* ProfileCollectionViewCell.swift in Sources */,
 				B07A742A214ACC35003D458F /* AppConstants.swift in Sources */,
 				6561171C214A76610017E6CA /* TeamBuilder.xcdatamodeld in Sources */,
-				6561173E214B98680017E6CA /* ProfileDashboardViewController.swift in Sources */,
+				6561173E214B98680017E6CA /* ProfileListViewController.swift in Sources */,
 				B07A7430214ACFCC003D458F /* AddProfileViewController.swift in Sources */,
 				65611714214A76610017E6CA /* AppDelegate.swift in Sources */,
 				B07A73F2214AB7DC003D458F /* TBTextField.swift in Sources */,
