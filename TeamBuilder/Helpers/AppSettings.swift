@@ -12,6 +12,8 @@ import Foundation
 @objc private protocol AppSettingsConfigurable {
 
     static var lastSavedProfileId: Int32 { get set }
+    static var lastSavedTechnologyId: Int32 { get set }
+    static var lastSavedDesignationId: Int32 { get set }
 }
 
 // MARK: - App Settings
@@ -46,5 +48,15 @@ extension AppSettings: AppSettingsConfigurable {
     static var lastSavedProfileId: Int32 {
         get { return AppSettings.value(for: #keyPath(lastSavedProfileId)) ?? 0 }
         set { AppSettings.updateDefaults(for: #keyPath(lastSavedProfileId), value: newValue) }
+    }
+
+    static var lastSavedTechnologyId: Int32 {
+        get { return AppSettings.value(for: #keyPath(lastSavedTechnologyId)) ?? 0 }
+        set { AppSettings.updateDefaults(for: #keyPath(lastSavedTechnologyId), value: newValue) }
+    }
+
+    static var lastSavedDesignationId: Int32 {
+        get { return AppSettings.value(for: #keyPath(lastSavedDesignationId)) ?? 0 }
+        set { AppSettings.updateDefaults(for: #keyPath(lastSavedDesignationId), value: newValue) }
     }
 }

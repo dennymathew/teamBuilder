@@ -10,6 +10,12 @@ import UIKit
 
 // MARK: - Properties and overrides
 class DashboardViewController: TBViewController {
+
+    enum HeaderSection: Int {
+        case profiles = 0
+        case technologies
+        case designations
+    }
     
     //Properties
     @IBOutlet weak var scHeaders: UISegmentedControl!
@@ -17,8 +23,17 @@ class DashboardViewController: TBViewController {
     @IBOutlet weak var cvProfile: UIView!
     @IBOutlet weak var cvTechnologies: UIView!
     @IBOutlet weak var cvDesignation: UIView!
+
+    var selectedHeader = HeaderSection.profiles {
+        didSet {
+            scHeaders.selectedSegmentIndex = selectedHeader.rawValue
+        }
+    }
     
     //Actions
+    @IBAction func actAdd(_ sender: UIBarButtonItem) {
+        handleAddAction()
+    }
     @IBAction func actHeaderChange(_ sender: UISegmentedControl) {
         handleSegmentChange(to: sender.selectedSegmentIndex)
     }
@@ -36,12 +51,15 @@ extension DashboardViewController {
 extension DashboardViewController: UIScrollViewDelegate {
     
     private func handleSegmentChange(to index: Int) {
-        switch index {
-        case 0:
+
+        selectedHeader = HeaderSection(rawValue: index) ?? .profiles
+
+        switch selectedHeader {
+        case .profiles:
             scrollView.setContentOffset(CGPoint(x: cvProfile.frame.minX, y: cvProfile.frame.minY), animated: true)
-        case 1:
+        case .technologies:
             scrollView.setContentOffset(CGPoint(x: cvTechnologies.frame.minX, y: cvTechnologies.frame.minY), animated: true)
-        case 2:
+        case .designations:
             scrollView.setContentOffset(CGPoint(x: cvDesignation.frame.minX, y: cvDesignation.frame.minY), animated: true)
         default:
             break
@@ -51,13 +69,37 @@ extension DashboardViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         switch scrollView.contentOffset.x {
         case 0..<cvProfile.frame.maxX:
-            scHeaders.selectedSegmentIndex = 0
+            selectedHeader = .profiles
         case cvProfile.frame.maxX..<cvTechnologies.frame.maxX:
-            scHeaders.selectedSegmentIndex = 1
+            selectedHeader = .technologies
         case cvTechnologies.frame.maxX..<cvDesignation.frame.maxX:
-            scHeaders.selectedSegmentIndex = 2
+            selectedHeader = .designations
         default:
             break
         }
+    }
+
+    private func handleAddAction() {
+
+        switch selectedHeader {
+        case .profiles:
+            showAddProfileViewController()
+        case .technologies:
+            showAddTechnologyViewController()
+        case .designations:
+            showAddDesignationViewController()
+        }
+    }
+
+    private func showAddProfileViewController() {
+        performSegue(withIdentifier: "showAddProfile", sender: self)
+    }
+
+    private func showAddTechnologyViewController() {
+        performSegue(withIdentifier: "showAddTechnology", sender: self)
+    }
+
+    private func showAddDesignationViewController() {
+        performSegue(withIdentifier: "showAddDesignation", sender: self)
     }
 }

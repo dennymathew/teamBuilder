@@ -24,12 +24,13 @@ class ProfileManager: NSObject {
             let tech = Technology(context: PersistenceService.context)
             tech.id = technology.id
             tech.title = technology.title
-            tech.addToProfile(profile)
+            profile.addToTechnology(tech)
         }
 
         let designation = Designation(context: PersistenceService.context)
         designation.id = profileModel.designation.id
         designation.title = profileModel.designation.title
+        profile.designation = designation
 
         //Save Context
         PersistenceService.saveContext()

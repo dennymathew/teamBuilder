@@ -1,5 +1,5 @@
 //
-//  ProfileListViewController.swift
+//  TechnologyListViewController.swift
 //  TeamBuilder
 //
 //  Created by Denny Mathew on 9/14/18.
@@ -9,15 +9,15 @@
 import UIKit
 
 // MARK: - Properties and Overrides
-class ProfileListViewController: TBViewController {
+class TechnologyListViewController: TBViewController {
 
-    @IBOutlet weak var tblProfiles: UITableView!
-    let manager = ProfileManager()
-    var profiles = [Profile]()
+    @IBOutlet weak var tblTechnologies: UITableView!
+    let manager = TechnologyManager()
+    var technologies = [Technology]()
 }
 
 // MARK: - Life Cycle
-extension ProfileListViewController {
+extension TechnologyListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,50 +31,50 @@ extension ProfileListViewController {
 }
 
 // MARK: - Handlers
-extension ProfileListViewController {
+extension TechnologyListViewController {
 
     private func setupTableView() {
-        tblProfiles.register(UINib(nibName: "TBTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "profileCell")
+        tblTechnologies.register(UINib(nibName: "TBTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "technologyCell")
 
     }
     
     private func populateTable() {
-        manager.fetchProfiles { (profiles, error) in
+        manager.fetchTechnologies { (technologies, error) in
 
             //Error?
             if error != nil {
                 Logger.log("Error: \(String(describing: error?.localizedDescription))")
             }
 
-            guard let profiles = profiles else { return }
+            guard let technologies = technologies else { return }
 
             //Success?
-            self.profiles = profiles
+            self.technologies = technologies
             DispatchQueue.main.async {
-                self.tblProfiles.reloadData()
+                self.tblTechnologies.reloadData()
             }
         }
     }
 }
 
 // MARK: - TableView Data Source and Delegates
-extension ProfileListViewController: UITableViewDataSource, UITableViewDelegate {
+extension TechnologyListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profiles.count
+        return technologies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as? TBTableViewCell else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "technologyCell", for: indexPath) as? TBTableViewCell else { fatalError() }
 
-        let profile = profiles[indexPath.row]
-        cell.lblTitle.text = (profile.firstName ?? "") + " " + (profile.lastName ?? "")
-        cell.lblSubtitle.text = profile.designation?.title
+        let technology = technologies[indexPath.row]
+        cell.lblTitle.text = technology.title
+        cell.lblSubtitle.text = ""
         return cell
     }
 

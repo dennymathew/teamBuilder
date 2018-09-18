@@ -1,5 +1,5 @@
 //
-//  ProfileListViewController.swift
+//  DesignationListViewController.swift
 //  TeamBuilder
 //
 //  Created by Denny Mathew on 9/14/18.
@@ -9,15 +9,15 @@
 import UIKit
 
 // MARK: - Properties and Overrides
-class ProfileListViewController: TBViewController {
+class DesignationListViewController: TBViewController {
 
-    @IBOutlet weak var tblProfiles: UITableView!
-    let manager = ProfileManager()
-    var profiles = [Profile]()
+    @IBOutlet weak var tblDesignations: UITableView!
+    let manager = DesignationManager()
+    var designations = [Designation]()
 }
 
 // MARK: - Life Cycle
-extension ProfileListViewController {
+extension DesignationListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,50 +31,50 @@ extension ProfileListViewController {
 }
 
 // MARK: - Handlers
-extension ProfileListViewController {
+extension DesignationListViewController {
 
     private func setupTableView() {
-        tblProfiles.register(UINib(nibName: "TBTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "profileCell")
+        tblDesignations.register(UINib(nibName: "TBTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "designationCell")
 
     }
     
     private func populateTable() {
-        manager.fetchProfiles { (profiles, error) in
+        manager.fetchDesignations { (designations, error) in
 
             //Error?
             if error != nil {
                 Logger.log("Error: \(String(describing: error?.localizedDescription))")
             }
 
-            guard let profiles = profiles else { return }
+            guard let designations = designations else { return }
 
             //Success?
-            self.profiles = profiles
+            self.designations = designations
             DispatchQueue.main.async {
-                self.tblProfiles.reloadData()
+                self.tblDesignations.reloadData()
             }
         }
     }
 }
 
 // MARK: - TableView Data Source and Delegates
-extension ProfileListViewController: UITableViewDataSource, UITableViewDelegate {
+extension DesignationListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profiles.count
+        return designations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as? TBTableViewCell else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "designationCell", for: indexPath) as? TBTableViewCell else { fatalError() }
 
-        let profile = profiles[indexPath.row]
-        cell.lblTitle.text = (profile.firstName ?? "") + " " + (profile.lastName ?? "")
-        cell.lblSubtitle.text = profile.designation?.title
+        let designation = designations[indexPath.row]
+        cell.lblTitle.text = designation.title
+        cell.lblSubtitle.text = ""
         return cell
     }
 

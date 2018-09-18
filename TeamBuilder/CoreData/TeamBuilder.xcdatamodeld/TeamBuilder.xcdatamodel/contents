@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Designation" representedClassName="Designation" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -11,7 +11,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="URI" syncable="YES"/>
-        <relationship name="designation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Designation" inverseName="profile" inverseEntity="Designation" syncable="YES"/>
+        <relationship name="designation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Designation" inverseName="profile" inverseEntity="Designation" syncable="YES"/>
         <relationship name="technology" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Technology" inverseName="profile" inverseEntity="Technology" syncable="YES"/>
     </entity>
     <entity name="Technology" representedClassName="Technology" syncable="YES" codeGenerationType="class">
